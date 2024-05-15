@@ -1,4 +1,5 @@
 # Marine-Life
+
 # Object Detection, Image Classification, and Few-Shot Learning with YOLOv7, CNNs, and Siamese Networks
 
 This project combines object detection using the YOLOv7 model, image classification using convolutional neural networks (CNNs), and few-shot learning using Siamese networks. The code performs various tasks, including preprocessing the dataset, training the models, and visualizing the training progress.
@@ -24,9 +25,11 @@ This project combines object detection using the YOLOv7 model, image classificat
         - [2.2.10 Training YOLOv7](#2210-training-yolov7)
         - [2.2.11 Monitoring Training Progress with WandB](#2211-monitoring-training-progress-with-wandb)
     - [2.3 Few-Shot Learning with Siamese Networks](#23-few-shot-learning-with-siamese-networks)
-        - [2.3.1 Cloning Darknet Repository](#231-cloning-darknet-repository)
-        - [2.3.2 Compiling Darknet](#232-compiling-darknet)
-        - [2.3.3 Training Siamese Networks](#233-training-siamese-networks)
+        - [2.3.1 Generating Image Triplets](#231-generating-image-triplets)
+        - [2.3.2 Preprocessing Image Triplets](#232-preprocessing-image-triplets)
+        - [2.3.3 Creating Siamese Network Model](#233-creating-siamese-network-model)
+        - [2.3.4 Training Siamese Network](#234-training-siamese-network)
+        - [2.3.5 Evaluation of Siamese Network](#235-evaluation-of-siamese-network)
 - [3. License](#3-license)
 - [4. Acknowledgements](#4-acknowledgements)
 
@@ -98,22 +101,23 @@ Training progress is monitored using WandB, and evaluation metrics are visualize
 
 ### 2.3 Few-Shot Learning with Siamese Networks
 
-#### 2.3.1 Cloning Darknet Repository
+#### 2.3.1 Generating Image Triplets
 
-The Darknet repository, containing the necessary code for training Siamese networks, is cloned from the official source.
+Image triplets are created to train the Siamese network, comprising anchor, positive, and negative images.
 
-#### 2.3.2 Compiling Darknet
+#### 2.3.2 Preprocessing Image Triplets
 
-Darknet is compiled to prepare for training the Siamese networks.
+The image triplets are preprocessed, including resizing and normalization.
 
-#### 2.3.3 Training Siamese Networks
+#### 2.3.3 Creating Siamese Network Model
 
-Siamese networks are trained using the Darknet framework to perform few-shot learning tasks.
+A Siamese network model is defined, consisting of shared weights and two identical subnetworks.
 
-## 3. License
+#### 2.3.4 Training Siamese Network
 
-[Include license information here]
+The Siamese network is trained on the prepared image triplets.
 
-## 4. Acknowledgements
+#### 2.3.5 Evaluation of Siamese Network
 
-[Include acknowledgements here]
+The trained Siamese network is evaluated using validation images to assess its performance in few-shot learning tasks.
+
